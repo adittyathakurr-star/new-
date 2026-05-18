@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decentralized Blockchain Voting Ledger</title>
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Include SHA-256 Crypto Library from CDN for block hashing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Immutable Blockchain Voting System</h1>
+        <p>A transparent, verifiable, and tamper-proof electronic voting application built on primitive blockchain structures.</p>
+    </header>
+
+    <div class="grid-container">
+        <!-- LEFT COLUMN: CONTROLS & LIVE AUDIT -->
+        <div class="left-column">
+            <!-- Panel 1: Cast Vote -->
+            <div class="panel">
+                <h2>Cast Your Ballot</h2>
+                <div class="form-group">
+                    <label for="voterAddress">Voter Cryptographic Wallet Address (Generated)</label>
+                    <input type="text" id="voterAddress" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="candidateSelect">Select Candidate</label>
+                    <select id="candidateSelect">
+                        <option value="Alice Vance (Democracy Party)">Alice Vance (Democracy Party)</option>
+                        <option value="Bob Miller (Liberty Alliance)">Bob Miller (Liberty Alliance)</option>
+                        <option value="Charlie Song (Green Future)">Charlie Song (Green Future)</option>
+                    </select>
+                </div>
+
+                <button id="voteBtn" onclick="processVote()">Sign & Broadcast Vote</button>
+            </div>
+
+            <!-- Panel 2: Live Metrics -->
+            <div class="panel">
+                <h2>Real-Time Audit Results</h2>
+                <div id="candidatesContainer">
+                    <!-- Dynamic Generation via JavaScript -->
+                </div>
+                <div class="integrity-status">
+                    Ledger Status: <span id="ledgerIntegrity">SECURE & VALID</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN: BLOCKCHAIN LEDGER VISUALIZER -->
+        <div class="panel">
+            <h2>
+                Distributed Ledger Visualizer 
+                <span id="blockCount">Blocks: 0</span>
+            </h2>
+            <div class="blockchain-container" id="blockchainVisualizer">
+                <!-- Blockchain cards injected here via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript logic -->
+    <script src="app.js"></script>
+</body>
+</html>
